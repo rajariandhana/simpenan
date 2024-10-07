@@ -1,13 +1,17 @@
 <div class="h-24 w-full px-12 py-6 flex justify-between items-center bg-gray-100 shadow-md">
-    <div>
-        <a href="/">Simpenan</a>
+    <div class="flex flex-col w-full h-full">
+        <a href="/" class="text-xl font-semibold">SIMPENAN</a>
+        {{-- <span class="text-xs">Sistem Informasi Media Privasi</span> --}}
+        <span class="text-xs">Sistem Informasi Media Penting Aman</span>
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center w-full justify-end h-full bg-blue-200">
         {{-- @dump(App\Models\User::all()) --}}
-        {{auth()->user()->name}}
-        <form action="/logout" method="POST" class="h-fit w-fit">
-            @csrf
-            <button type="submit" class="bg-white border border-red-500 text-red-500 rounded-md px-2 py-1">Logout</button>
-        </form>
+        <a href="/account" class="hover:underline">{{auth()->user()->name}}</a>
+        <div class="h-full flex flex-col items-center justify-center bg-red-200">
+            <form action="/logout" method="POST" class="">
+                @csrf
+                <button type="submit" class=" text-red-500 bg-gray-600">Logout</button>
+            </form>
+        </div>
     </div>
 </div>
