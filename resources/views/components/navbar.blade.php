@@ -6,12 +6,19 @@ x-data="{accOpt:false}">
         <span class="text-xs">Office Stock Management System</span>
     </div>
     <div class="flex items-center w-full justify-end h-full">
-        {{-- @dump(App\Models\User::all()) --}}
-        {{-- <a href="/account" class="hover:underline">{{auth()->user()->name}}</a> --}}
-        <button @click="accOpt=!accOpt" @click.oustide="accOpt=false">
-            <span>{{Auth::user()->name}}</span>
+        <div>
+            <button type="button" @click="accOpt=!accOpt" @click.oustide="accOpt=false" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2 focus:ring-offset-white-100" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <span class="absolute -inset-1.5"></span>
+                <!-- <span class="sr-only">Open user menu</span> -->
+                <!-- <span class="hover:underline">{{Auth::user()->name}}</span> -->
+                <img class="h-8 w-8 rounded-full" src="{{ asset('img/snopi.jpeg') }}" alt="">
+            </button>
+        </div>
+        
+        <!-- <button @click="accOpt=!accOpt" @click.oustide="accOpt=false">
+            <span class="hover:underline">{{Auth::user()->name}}</span>
             <img src="" alt="">
-        </button>
+        </button> -->
         <div x-show="accOpt" class="fixed flex flex-col justify-center p-2 h-fit mt-32 font-sans text-center bg-gray-200 rounded-lg shadow-md text-zinc-500 text-md gap-y-2">
             <a href="/account" class="w-24 py-1 text-white bg-indigo-500 rounded-lg">Account</a>
             <form action="/logout" method="POST" class="m-0">
