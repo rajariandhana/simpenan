@@ -1,9 +1,9 @@
 <nav class="h-24 w-full px-12 py-6 flex justify-between items-center bg-gray-100 shadow-md"
 x-data="{accOpt:false}">
     <div class="flex flex-col w-full h-full">
-        <a href="/" class="text-xl font-semibold">SIMPENAN</a>
+        <a href="/" class="text-xl font-semibold">OSMS</a>
         {{-- <span class="text-xs">Sistem Informasi Media Privasi</span> --}}
-        <span class="text-xs">Sistem Informasi Media Penting Aman</span>
+        <span class="text-xs">Office Stock Management System</span>
     </div>
     <div class="flex items-center w-full justify-end h-full">
         {{-- @dump(App\Models\User::all()) --}}

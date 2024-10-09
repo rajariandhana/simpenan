@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\RegisteredUserController;
 
 
@@ -20,12 +21,15 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/', function () {
     //     return view('dashboard');
     // });
+    Route::get('/',[WarehouseController::class,'index']);
     Route::get('/account',function(){
         return view('account');
     });
+
+    Route::get('/warehouse/{warehouse:id}',[WarehouseController::class,'warehouse']);
     Route::post('/logout',[SessionController::class,'destroy']);
 
-    Route::get('/',[FileController::class,'index'])->name('files.index');
+    // Route::get('/',[FileController::class,'index'])->name('files.index');
     Route::get('/files/create',[FileController::class,'create']);
     Route::post('/files',[FileController::class,'store'])->name('files.store');
     Route::get('/files/download/{id}', [FileController::class, 'download'])->name('files.download');
