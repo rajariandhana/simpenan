@@ -21,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
     //     return view('dashboard');
     // });
     Route::get('/account',function(){
-        // return view('account');
+        return view('account');
     });
     Route::post('/logout',[SessionController::class,'destroy']);
 
